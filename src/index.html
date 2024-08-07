@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <title>personal Website</title>
+    <script src="javascript/test.js"></script>
+</head>
+
+<body class="h-screen to-background-primary ">
+    <div class="p-5 flex justify-center ">
+        <div class=" bg-background-secondary text-white  flex-col p-4 mt-10  m-6 rounded-xl mr-5">
+            <h1 class="text-text-primary">John Wambui</h1>
+            <p class="text-text-primary">FullStack Developer</p>
+            <div>
+
+            </div>
+        </div>
+        <div class="w-60 bg-background-secondary text-white  flex-col p-4 mt-10  m-6 rounded-xl mr-5 text-right">
+        <h1 class="text-text-primary">درباره من</h1>
+<p class="text-text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione illo blanditiis vel. Pariatur iste impedit id laborum eos, soluta natus a voluptate alias accusamus eum repellendus consectetur exercitationem labore sunt.</p>
+        <h2 class="text-text-primary">کار های من</h2>
+        </div>
+        <div id="navbar" class="w-75 max-w-md h-auto bg-background-secondary text-white flex-col p-4 mt-24  m-6 rounded-3xl pt-2 items-center">
+            <div class=" w-20 h-20 bg-green-1 rounded-3xl mt-12 px-1 py-1 text-center hover:bg-green-300 text-white relative 
+            shadow[0 _4px_6px_rgba(0,0,0,0.1)]">
+              <img src="image/Vector1.svg" class="size-6 absolute right-7 top-3">
+
+                <a href="#"><h3 class="text-[13px] font-bold text-text-primary mt-7 text-center pt-1">خانه من</h3></a>
+                </div>
+            <div class=" w-20 h-20 bg-green-1 rounded-3xl mt-12 text-center px-1 py-1  hover:bg-green-300  relative ">
+             
+               <img src="image/Vector.svg" class="size-6 absolute right-7 top-3">
+                  
+                <a href="#"><h3 class="text-[13px] font-bold text-text-primary mt-7 text-center pt-1">رزومه من</h3></a>
+            </div>
+            <div class=" w-20 h-20 bg-green-1 rounded-3xl mt-12 px-1 py-1 text-center hover:bg-green-300 text-white relative">
+                <img src="image/work icon.svg" class="size-6 absolute right-7 top-3">
+                  
+
+                <a href="#"><h3 class="text-[13px] font-bold text-text-primary mt-7 text-center pt-1">کار های من</h3></a>
+            </div>
+            <div class=" w-20 h-20 bg-green-1 rounded-3xl mt-12 px-1 py-1 text-center hover:bg-green-300 text-white relative ">
+              
+             <img src="image/Vector3.svg" class="size-6 absolute right-7 top-3">
+                  
+                <a href="#"><h3 class="text-[13px] font-bold text-text-primary mt-7 text-center pt-1">تماس</h3></a>
+            </div>
+
+</div>
+<script>
+    
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const navItems = document.querySelectorAll('.nav-item');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const page = item.getAttribute('data-page');
+
+                // تغییر رنگ آیکن و عنوان
+                navItems.forEach(nav => {
+                    const icon = nav.querySelector('.icon');
+                    const title = nav.querySelector('.title');
+
+                    if (nav === item) {
+                        icon.style.filter = 'invert(1)'; // تغییر رنگ آیکن به سفید
+                        title.style.color = 'white'; // تغییر رنگ عنوان به سفید
+                    } else {
+                        icon.style.filter = 'invert(0)'; // رنگ اصلی آیکن
+                        title.style.color = 'white'; // رنگ اصلی عنوان
+                    }
+                });
+
+                // هدایت به صفحه جدید
+                switch (page) {
+                    case 'home':
+                        window.location.href = 'home.html';
+                        break;
+                    case 'resume':
+                        window.location.href = 'resume.html';
+                        break;
+                    case 'works':
+                        window.location.href = 'works.html';
+                        break;
+                    case 'contact':
+                        window.location.href = 'contact.html';
+                        break;
+                }
+            });
+        });
+    });
+
+
+
+</script>
+</body>
+
+</html>
